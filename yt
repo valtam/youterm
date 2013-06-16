@@ -1,5 +1,5 @@
 #!/bin/sh
-# YouTerm by Jerry Bezencon, 2013.
+# YouTerm by Jerry Bezencon, pdq 2013.
 # Requirements: VLC Media Player
 
 bold=`tput bold`
