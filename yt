@@ -10,6 +10,11 @@ echo "YouTerm - Watch Youtube videos without a browser"
 echo "************************************************${normal}"
 echo ""
 
+echo "This utility will also stream a number of other formats including:"
+echo ".ogg .mp4 .mp3 .wmv .mov .mpeg .mpg .asf .rm"
+echo ""
+echo "Choose Option ${bold}'Other Streams'${normal} after inputting the url to stream the above formats."
+echo ""
 
 youterm_url() {
   echo -n "Input the url: "
@@ -28,9 +33,10 @@ youterm_res() {
 	echo "[3] 480p"
 	echo "[4] 720p"
 	echo "[5] 1080p"
-	echo "[6] Exit"
+	echo "[6] Other Streams"
+	echo "[7] Exit"
 
-	echo -n "Enter your menu choice [1-6]: "
+	echo -n "Enter your menu choice [1-7]: "
 	read res
 
 	if [ "$res" = "" ]; then
@@ -39,12 +45,13 @@ youterm_res() {
 
 	case $res in
 
-		1) vlc --preferred-resolution "240p" $url ;;
-		2) vlc --preferred-resolution "360p" $url ;;
-		3) vlc --preferred-resolution "480p" $url ;;
-		4) vlc --preferred-resolution "720p" $url ;;
-		5) vlc --preferred-resolution "1080p" $url ;;
-		6) exit 6 ;;
+		1) vlc --preferred-resolution "240p" $url --play-and-exit ;;
+		2) vlc --preferred-resolution "360p" $url --play-and-exit ;;
+		3) vlc --preferred-resolution "480p" $url --play-and-exit ;;
+		4) vlc --preferred-resolution "720p" $url --play-and-exit ;;
+		5) vlc --preferred-resolution "1080p" $url --play-and-exit ;;
+		6) vlc -vvv $url --play-and-exit ;;
+		7) exit 7 ;;
 		*) youterm_res ;;
 
 	esac
