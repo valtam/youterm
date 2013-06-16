@@ -1,4 +1,5 @@
-Play Youtube videos without a browser
+Play Youtube videos without a browser.
+Requirements: VLC Media Player
 
 open a terminal: ./yt
 
