@@ -2,6 +2,13 @@
 # YouTerm by Jerry Bezencon, pdq 2013.
 # Requirements: VLC Media Player
 
+# check vlc is available
+type vlc >/dev/null 2>/dev/null || {
+	echo "Couln't find vlc, which is required for this script." >&2
+	exit 17
+}
+
+
 bold=`tput bold`
 normal=`tput sgr0`
 clear
